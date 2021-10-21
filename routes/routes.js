@@ -61,4 +61,8 @@ router.get("/categories", (req, res) => {
     .catch((error) => console.error(error));
 });
 
+router.get("/", (req, res) => {
+  res.json("hello netflix");
+});
+
 module.exports = router;
