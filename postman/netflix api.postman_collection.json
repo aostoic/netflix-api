@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "6baaa524-406b-41d2-9102-0542526fdc01",
+		"name": "netflix api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3030/films",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"limit\" : 1000,\r\n\"pageNumber\" : 0,\r\n\"filterByCategory\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3030/films",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"films"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3030/films/randoms",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"orderByRating\" : false,\r\n\"filterByCategory\" : \"\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3030/films/randoms",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"films",
+						"randoms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3030/categories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"orderByRating\" : false,\r\n\"filterByCategory\" : \"\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3030/categories",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
