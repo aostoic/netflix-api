@@ -12,7 +12,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"limit\" : 1000,\r\n\"pageNumber\" : 0,\r\n\"filterByCategory\": \"\"\r\n}",
+					"raw": "{\r\n\"limit\" : 1,\r\n\"pageNumber\" : 0,\r\n\"filterByCategory\": \"Martial Arts Action\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -86,6 +86,100 @@
 						"localhost"
 					],
 					"port": "3030",
+					"path": [
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "heroku/films",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"limit\" : 2,\r\n\"pageNumber\" : 4,\r\n\"filterByCategory\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://netflix-api-example.herokuapp.com/films",
+					"protocol": "https",
+					"host": [
+						"netflix-api-example",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"films"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "heroku/films/randoms",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"orderByRating\" : false,\r\n\"filterByCategory\" : \"\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://netflix-api-example.herokuapp.com/films/randoms",
+					"protocol": "https",
+					"host": [
+						"netflix-api-example",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"films",
+						"randoms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "heroku/categories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"orderByRating\" : false,\r\n\"filterByCategory\" : \"\" }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://netflix-api-example.herokuapp.com/categories",
+					"protocol": "https",
+					"host": [
+						"netflix-api-example",
+						"herokuapp",
+						"com"
+					],
 					"path": [
 						"categories"
 					]
