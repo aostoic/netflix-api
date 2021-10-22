@@ -5,8 +5,9 @@ const MongoClient = require("mongodb").MongoClient;
 
 let db;
 let collection;
+// user test expiration
 MongoClient.connect(
-  "mongodb+srv://aostoic:darkluk1A1@cluster0.wcwko.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "mongodb+srv://netflix-user:netflix1A1@cluster0.wcwko.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err, client) => {
     if (err) return console.error(err);
