@@ -33,6 +33,37 @@
 			"response": []
 		},
 		{
+			"name": "localhost:3030/films/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"limit\" : 1,\r\n\"pageNumber\" : 0,\r\n\"filterByCategory\": \"Martial Arts Action\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3030/films/0",
+					"host": [
+						"localhost"
+					],
+					"port": "3030",
+					"path": [
+						"films",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "localhost:3030/films/randoms",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -100,7 +131,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"limit\" : 2,\r\n\"pageNumber\" : 4,\r\n\"filterByCategory\": \"\"\r\n}",
+					"raw": "{\r\n\"limit\" : 10,\r\n\"pageNumber\" : 0,\r\n\"filterByCategory\": \"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -182,6 +213,38 @@
 					],
 					"path": [
 						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "heroku/films/:id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"limit\" : 1,\r\n\"pageNumber\" : 0,\r\n\"filterByCategory\": \"Martial Arts Action\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://netflix-api-example.herokuapp.com/617162bf6fc4d9294020c278",
+					"protocol": "https",
+					"host": [
+						"netflix-api-example",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"617162bf6fc4d9294020c278"
 					]
 				}
 			},
