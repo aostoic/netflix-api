@@ -16,6 +16,18 @@ MongoClient.connect(
   }
 );
 
+router.get("/films/:id", (req, res) => {
+  const { id } = req.params;
+
+  collection
+    .findOne({ id: Number(id) })
+
+    .then((results) => {
+      res.json(results);
+    })
+    .catch((error) => console.error(error));
+});
+
 router.post("/films", (req, res) => {
   const { filterByCategory = "", limit = 10, pageNumber = 0 } = req.body;
 
