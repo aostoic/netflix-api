@@ -21,29 +21,9 @@ MongoClient.connect(
   }
 );
 
-router.get("/films/:id", (req, res) => {
-  const { id } = req.params;
-
-  if (!Number.isInteger(Number(id)) || Number(id) < 0) {
-    res
-      .status(400)
-      .send({ error: "params : id greater than or equal to zero" });
-  }
-
-  collection
-    .findOne({ id: Number(id) })
-    .then((results) => {
-      if (results) {
-        res.json(results);
-      }
-      res.json({});
-    })
-    .catch((error) => res.status(500).send(error));
-});
-
 router.post("/films", (req, res) => {
   const { filterByCategory = "", limit = 10, pageNumber } = req.body;
-  if (!Number.isInteger(pageNumber) || pageNumber < 0) {
+  if (!Number.isInteger(pageNumber) || pageNumber <= 0) {
     res
       .status(400)
       .send({ error: "body : pageNumber greater than or equal to zero" });
@@ -61,6 +41,26 @@ router.post("/films", (req, res) => {
     .toArray()
     .then((results) => {
       res.json(results);
+    })
+    .catch((error) => res.status(500).send(error));
+});
+
+router.get("/films/:id", (req, res) => {
+  const { id } = req.params;
+
+  if (!Number.isInteger(Number(id)) || Number(id) < 0) {
+    res
+      .status(400)
+      .send({ error: "params : id greater than or equal to zero" });
+  }
+
+  collection
+    .findOne({ id: Number(id) })
+    .then((results) => {
+      if (results) {
+        res.json(results);
+      }
+      res.json({});
     })
     .catch((error) => res.status(500).send(error));
 });
